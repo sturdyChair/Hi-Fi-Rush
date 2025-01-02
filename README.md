@@ -1,5 +1,6 @@
 # DirectX11 모작 팀 포트폴리오 : Hi-Fi-Rush
-TODO : 여기에 타이틀 이미지 삽입
+
+![img](https://i.namu.wiki/i/h6jufCk4RgPaI7q8dlbPcKHnLkhfkZsDAXDmGGjijy8HqceSFgYTipgHuVv0_T1SO8FvG7LoovXEGo_2lHcsazfcx3f_JNizrp-LqEBU4frDY8_4QlsD3DSFS-czm2xtxm8-SDjNFz9xpEFcbHZZyw.webp)
 
 리소스가 포함되어있지 않은 코드 공개용 리포지토리입니다. 정상적으로 동작하지 않을 가능성이 매우 높습니다.
 
@@ -12,7 +13,22 @@ C, C++, STL, FMOD, Win API, OpenCV, DLL, DirectX 11, vcpkg, HLSL, Effects11, Ass
 
 역할 : 프레임워커, TA (이펙트, 셰이더)
 
-담당 : 프레임워크, 외부 라이브러리 이식, 카메라, 이펙트 다수, L.I.F.T, 케일 반달레이
+담당 : 프레임워크, 외부 라이브러리 이식, 카메라, 이펙트 다수, 트램 DirectX11 모작 팀 포트폴리오 : Hi-Fi-Rush
+
+![img](https://i.namu.wiki/i/h6jufCk4RgPaI7q8dlbPcKHnLkhfkZsDAXDmGGjijy8HqceSFgYTipgHuVv0_T1SO8FvG7LoovXEGo_2lHcsazfcx3f_JNizrp-LqEBU4frDY8_4QlsD3DSFS-czm2xtxm8-SDjNFz9xpEFcbHZZyw.webp)
+
+리소스가 포함되어있지 않은 코드 공개용 리포지토리입니다. 정상적으로 동작하지 않을 가능성이 매우 높습니다.
+
+개발 기간 : 2024.09 ~ 2024.11
+
+장르 : 3인칭 리듬 액션 어드벤처
+
+기술 스택:
+C, C++, STL, FMOD, Win API, OpenCV, DLL, DirectX 11, vcpkg, HLSL, Effects11, Assimp, ImGui, ImGuizmo, DirectXTK, DirectMath, Nvidia PhysX 5.3 , DLL
+
+역할 : 프레임워커, TA (이펙트, 셰이더)
+
+담당 : 프레임워크, 외부 라이브러리 이식, 카메라, 이펙트 다수, 카트레일 & 터널, 케일 반달레이
 
 ---
 
@@ -153,13 +169,13 @@ C, C++, STL, FMOD, Win API, OpenCV, DLL, DirectX 11, vcpkg, HLSL, Effects11, Ass
 
 ---
 
-## 7. L.I.F.T
+## 7. 카트레일 & 터널
 ### 터널
 - **터널 구성**:
   - Instancing을 이용해 터널 매쉬 400개를 길게 배치
   - 터널의 끝 부분은 Deffered Lighting 단계에서 안개 효과를 적용해 처리
 
-### L.I.F.T 애니메이션
+### 카트레일 애니메이션
 - 애니메이션 분리 제어:
   - Bone을 태그에 따라 특정 그룹들로 분리, 서로 다른 애니메이션을 동시에 재생할 수 있도록 함
   - 4개의 바퀴와 브레이크가 서로 독립적으로 상태를 제어할 수 있게됨
@@ -194,4 +210,17 @@ C, C++, STL, FMOD, Win API, OpenCV, DLL, DirectX 11, vcpkg, HLSL, Effects11, Ass
 
 스마트 포인터를 이용한 프레임 워크는 프로젝트 초기, 몇번 있었던 순환 참조 문제를 제외하면 메모리 문제를 전혀 일으키지 않았고 이 덕분에 저희는 더 생산성 있는 일에 집중할 수 있었습니다.
 
+### 3. 애니메이션 분리제어
+카트레일 모델을 처음 확인했을 때 상당히 곤란한 상황이었습니다.
+카트레일 몸체, 4개의 바퀴, 브레이크, 그리고 경고등까지 하나의 모델로 묶여있었지만, 로직에 맞게 서로 다른 애니메이션을 재생해줘야했기 때문입니다.
+그러나 기존에 사용하던 애니메이션 제어 방식으로는 하나의 모델을 두 그룹으로 분리해 작동시키는 것이 한계였습니다.
+
+우선 기존의 애니메이션 분리 제어 방식을 일반화하고 확장하는 것에서 시작했습니다.
+
+Bone을 분리시키고, 그 그룹에 문자열로 된 Key 값을 붙혀주어 나중에 접근이 용이하도록 설계했습니다. 이 Key는 STL의 map을 사용해 저장했습니다.
+그리고 분리된 Bone 그룹마다 현제 재생 중인 애니메이션, 키프레임, 반복 여부 등을 저장했고, 애니메이션의 중복 재생을 피하기 위해 매 프레임 이미 재생된 애니메이션을 체크했습니다.
+
+Bone의 분리는 Bone 그룹의 최상위 부모로부터 재귀적으로 같은 그룹에 포함시키는 방식으로 구현했습니다.
+
+결과적으로 4개의 바퀴와 브레이크에 서로 다른 상태를 부여하고, 독립적으로 제어하며, 그 상태를 애니메이션을 통해 표현할 수 있었습니다.
 
