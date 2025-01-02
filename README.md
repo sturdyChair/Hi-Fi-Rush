@@ -13,21 +13,6 @@ C, C++, STL, FMOD, Win API, OpenCV, DLL, DirectX 11, vcpkg, HLSL, Effects11, Ass
 
 역할 : 프레임워커, TA (이펙트, 셰이더)
 
-담당 : 프레임워크, 외부 라이브러리 이식, 카메라, 이펙트 다수, 트램 DirectX11 모작 팀 포트폴리오 : Hi-Fi-Rush
-
-![img](https://i.namu.wiki/i/h6jufCk4RgPaI7q8dlbPcKHnLkhfkZsDAXDmGGjijy8HqceSFgYTipgHuVv0_T1SO8FvG7LoovXEGo_2lHcsazfcx3f_JNizrp-LqEBU4frDY8_4QlsD3DSFS-czm2xtxm8-SDjNFz9xpEFcbHZZyw.webp)
-
-리소스가 포함되어있지 않은 코드 공개용 리포지토리입니다. 정상적으로 동작하지 않을 가능성이 매우 높습니다.
-
-개발 기간 : 2024.09 ~ 2024.11
-
-장르 : 3인칭 리듬 액션 어드벤처
-
-기술 스택:
-C, C++, STL, FMOD, Win API, OpenCV, DLL, DirectX 11, vcpkg, HLSL, Effects11, Assimp, ImGui, ImGuizmo, DirectXTK, DirectMath, Nvidia PhysX 5.3 , DLL
-
-역할 : 프레임워커, TA (이펙트, 셰이더)
-
 담당 : 프레임워크, 외부 라이브러리 이식, 카메라, 이펙트 다수, 카트레일 & 터널, 케일 반달레이
 
 ---
