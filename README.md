@@ -143,7 +143,7 @@ C, C++, STL, FMOD, Win API, OpenCV, DLL, DirectX 11, vcpkg, HLSL, Effects11, Ass
  
 ---
 
-## 6. 카메라
+## 6. 카메라 ([트러블 슈팅](#4-카메라-제어))
 - **View 행렬**:
   - Yaw, Pitch, Roll 각도로 Look Vector 정의
   - Target의 좌표를 기준으로 Distance, Offset을 이용해 위치 계산
@@ -164,7 +164,7 @@ C, C++, STL, FMOD, Win API, OpenCV, DLL, DirectX 11, vcpkg, HLSL, Effects11, Ass
   - 터널의 끝 부분은 Deffered Lighting 단계에서 안개 효과를 적용해 처리
 
 ### 카트레일 애니메이션
-- [애니메이션 분리 제어](###3.-애니메이션-분리제어):
+- [애니메이션 분리 제어](#3-애니메이션-분리제어):
   - Bone을 태그에 따라 특정 그룹들로 분리, 서로 다른 애니메이션을 동시에 재생할 수 있도록 함
   - 4개의 바퀴와 브레이크가 서로 독립적으로 상태를 제어할 수 있게됨
  
