@@ -15,6 +15,8 @@ C, C++, STL, FMOD, Win API, OpenCV, DLL, DirectX 11, vcpkg, HLSL, Effects11, Ass
 
 담당 : 프레임워크, 외부 라이브러리 이식, 카메라, 이펙트 다수, 카트레일 & 터널, 케일 반달레이
 
+제 다른 작업물은 [여기](https://github.com/sturdyChair/portfolio)서 볼 수 있습니다!
+
 ---
 
 ## 시연 영상 링크 
