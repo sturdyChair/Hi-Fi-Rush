@@ -148,9 +148,6 @@ void CCharacterController::Velocity_Calculation(_float fTimeDelta)
 	if (XMVectorGetX(XMVector3Length(vVelocity)) > 0.001f)
 		m_fSpeed = XMVectorGetX(XMVector3Length(vVelocity)) - m_fFriction * fTimeDelta;
 
-
-
-	//if (m_fSpeed >= m_fMaxSpeed) m_fSpeed = m_fMaxSpeed;
 	if (m_fSpeed <= 0.00001f)
 	{
 		vVelocity = XMVectorZero();
@@ -159,21 +156,6 @@ void CCharacterController::Velocity_Calculation(_float fTimeDelta)
 	{
 		vVelocity = XMVector3Normalize(vVelocity);
 		vVelocity = vVelocity * m_fSpeed;
-		//if (abs(vVelocity.x) >= m_vMaxVelocity.x && abs(vVelocity.x) >= 0.001f)
-		//{
-		//	float fDir = (abs(vVelocity.x) / vVelocity.x);
-		//	vVelocity.x = fDir * m_vMaxVelocity.x;
-		//}
-		//if (abs(vVelocity.y) >= m_vMaxVelocity.y && abs(vVelocity.y) >= 0.001f)
-		//{
-		//	float fDir = (abs(vVelocity.y) / vVelocity.y);
-		//	vVelocity.y = fDir * m_vMaxVelocity.y;
-		//}
-		//if (abs(vVelocity.z) >= m_vMaxVelocity.z && abs(vVelocity.z) >= 0.001f)
-		//{
-		//	float fDir = (abs(vVelocity.z) / vVelocity.z);
-		//	vVelocity.z = fDir * m_vMaxVelocity.z;
-		//}
 	}
 	if (m_bGravity)
 	{
@@ -223,13 +205,6 @@ void CCharacterController::Update(_float fTimeDelta)
 	{
 		return;
 	}
-	//PxControllerState pCS;
-	//m_pPxController->getState(pCS);
-	//if (pCS.collisionFlags & PxControllerCollisionFlag::eCOLLISION_DOWN)
-	//{
-	//	if(m_vVelocity.y < -1.f)
-	//		m_vVelocity.y = 0.f;
-	//}
 	if (m_bUseVelocity_Calculation)
 	{
 		Velocity_Calculation(fTimeDelta);
