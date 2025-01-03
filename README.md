@@ -67,9 +67,9 @@ C, C++, STL, FMOD, Win API, OpenCV, DLL, DirectX 11, vcpkg, HLSL, Effects11, Ass
   - Texture Caching 작업과 함께 불필요하게 공간을 차지하고 있던 데이터 또한 정리, 메모리 사용량을 2GB 가량 절약하고 로딩 시간 또한 기존 5분에서 3분까지 단축시킴
   - 멀티 스레딩을 이용해 CPU 점유율을 끌어올리고 최종적으로 로딩 시간을 2분까지 단축
 ### Object Pooling
-- **shared_ptr**:
-  - shared_ptr의 레퍼런스 관리 기능을 이용해 Pool에 오브젝트를 저장하고 게임 루프에서 회수함
-  - 메모리의 할당, 해제 없이 대량의 객체를 순간적으로 생성할 수 있음
+- [**shared_ptr**](#2-스마트-포인터):
+  - shared_ptr의 레퍼런스 관리 기능을 이용해 Pool에 오브젝트를 저장하고 게임 루프에서 회수함 [전체 회수 함수](https://github.com/sturdyChair/asset/blob/main/ObjPool%20Recall.png)
+  - 메모리의 할당, 해제 없이 대량의 객체를 순간적으로 생성할 수 있음 
 - **초기화**:
   - Pool에 배치된 오브젝트는 게임 루프에 포함되거나 게임 루프에서 제거될 때 특수한 Callback 함수를 호출함
   - Callback 함수는 각 Object에서 직접 구현, 필요한 초기화 작업을 수행함
@@ -90,7 +90,7 @@ C, C++, STL, FMOD, Win API, OpenCV, DLL, DirectX 11, vcpkg, HLSL, Effects11, Ass
 - **메쉬 콜라이더**:
   - 메쉬와 동일한 모양의 충돌체, 주로 지형에 사용됨
   - PhysX 엔진에 메쉬의 정점 정보를 전달해 만들어짐
-- **Character Controller(CCT)**:
+- [**Character Controller(CCT)**](#5-캐릭터-컨트롤러):
   - 캡슐 모양의 충돌체
   - PhysX로 구성된 지형과 상호작용하기 위해 **움직이는 객체**가 가지고 있는 Component 객체
   - 주로 플레이어, 몬스터 AI등이 소유하고 있으며 이동을 제어함
@@ -109,6 +109,11 @@ C, C++, STL, FMOD, Win API, OpenCV, DLL, DirectX 11, vcpkg, HLSL, Effects11, Ass
   - State를 이용한 LifeCycle 관리, 재생 속도 조절
   - 오브젝트 풀링을 이용, 메모리 할당과 해제 없이 이펙트 객체 재사용
   - `Union Effect`로 여러 이펙트를 통합 및 관리
+    >
+    > ![img](https://github.com/sturdyChair/asset/blob/main/EffectBase1.png)
+    >
+    > 이펙트 인터페이스, 수명 관리를 위한 Enum과 콜백 함수가 정의되어있음
+    >
 - **툴 지원**:
   - ImGui 및 Imguizmo 라이브러리를 사용한 편집 기능 제공
   - UV좌표, 컬러, 재생률, 수명, 크기 등 다양한 정보를 수정 및 확인 가능
