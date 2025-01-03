@@ -164,7 +164,7 @@ C, C++, STL, FMOD, Win API, OpenCV, DLL, DirectX 11, vcpkg, HLSL, Effects11, Ass
   - 터널의 끝 부분은 Deffered Lighting 단계에서 안개 효과를 적용해 처리
 
 ### 카트레일 애니메이션
-- 애니메이션 분리 제어:
+- [애니메이션 분리 제어](###-3.-애니메이션-분리제어):
   - Bone을 태그에 따라 특정 그룹들로 분리, 서로 다른 애니메이션을 동시에 재생할 수 있도록 함
   - 4개의 바퀴와 브레이크가 서로 독립적으로 상태를 제어할 수 있게됨
  
@@ -197,6 +197,18 @@ C, C++, STL, FMOD, Win API, OpenCV, DLL, DirectX 11, vcpkg, HLSL, Effects11, Ass
 그래서 STL의 shared_ptr을 이용해 자동으로 포인터의 수명이 관리되도록 처음부터 프레임워크를 작성하고, 협업자들 또한 shared_ptr을 사용하기 쉽도록 매크로를 제공했습니다.
 
 스마트 포인터를 이용한 프레임 워크는 프로젝트 초기, 몇번 있었던 순환 참조 문제를 제외하면 메모리 문제를 전혀 일으키지 않았고 이 덕분에 저희는 더 생산성 있는 일에 집중할 수 있었습니다.
+
+>
+> ![img](https://github.com/sturdyChair/asset/blob/main/MakeSharedEnabler%20Macro.png)
+>
+> private 생성자를 가진 객체에 make_shared 함수를 사용하기 위한 Wrapper 객체 선언 매크로
+>
+
+>
+> ![img](https://github.com/sturdyChair/asset/blob/main/MakeSharedEnabler%20Creator.png)
+>
+> 위 매크로를 이용한 예시
+>
 
 ### 3. 애니메이션 분리제어
 카트레일 모델을 처음 확인했을 때 상당히 곤란한 상황이었습니다.
