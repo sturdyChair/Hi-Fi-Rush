@@ -100,8 +100,9 @@ C, C++, STL, FMOD, Win API, OpenCV, DLL, DirectX 11, vcpkg, HLSL, Effects11, Ass
 - 충돌 처리가 필요한 객체는 Collider Component를 소유, 매 프레임 Collider를 Collision Manager에 등록함  
 - 등록되지 않은 Collider는 유효하지 않은 것으로 판별, 그 프레임에서 충돌 처리를 하지 않음  
 - Collider는 Collision Group으로 나뉘며 그룹 기반으로 충돌 검사 시행  
-- 각 Collider가 가지고 있는 고유 ID를 이용해 각 Collider 쌍의 충돌 상태를 저장함  
-  
+- 각 Collider가 가지고 있는 고유 ID를 이용해 각 Collider 쌍의 충돌 상태를 저장함   
+  > <img src="https://github.com/sturdyChair/asset/blob/main/HiFi/Collision.jpg" width="600" height="400"/>   
+  >
 ---
 
 ## 4. 이펙트 프레임워크  
@@ -136,7 +137,9 @@ C, C++, STL, FMOD, Win API, OpenCV, DLL, DirectX 11, vcpkg, HLSL, Effects11, Ass
 ## 5. 보스 AI & 연출   
 ### 케일 반달레이 보스전   
 - **이펙트 & 사운드**:   
-  - 모델 애니메이션의 연동으로 키프레임 기반 VFX, SFX 관리   
+  - 모델 애니메이션의 연동으로 키프레임 기반 VFX, SFX 관리
+    >  <img src="https://github.com/sturdyChair/asset/blob/main/HiFi/JC_Effect.gif" width="600" height="400"/>   
+    >
 - **4단계 페이즈**:   
   - 특정 캐릭터와 상호작용 및 약점 공략 가능   
   - 페이즈 변경에 따른 이벤트 처리, 특수 연출   
