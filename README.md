@@ -40,7 +40,9 @@ C, C++, STL, FMOD, Win API, OpenCV, DLL, DirectX 11, vcpkg, HLSL, Effects11, Ass
 
 ## 1. DirectX 11 기반 렌더링 엔진
 ### 렌더링
+
   <img src="https://github.com/sturdyChair/asset/blob/main/HiFi/RenderTarget.jpg" width="600" height="400"/>   
+  
 - **디퍼드 라이팅**: 연산 부하를 줄이기 위해 G-Buffer 활용   
   - G-Buffer 데이터: `Color`, `Id`, `Position`, `Normal`, `Emissive`.   
     > `Id`버퍼는 픽셀 피킹 등 개발 편의성을 위해 마련됨   
