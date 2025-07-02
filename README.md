@@ -125,7 +125,7 @@ C, C++, STL, FMOD, Win API, OpenCV, DLL, DirectX 11, vcpkg, HLSL, Effects11, Ass
 - Decal Box가 그려질 픽셀에 대해 World → Local 공간 변환, G-Buffer의 정보를 이용해 내부에만 Decal 적용
   > <img src="https://github.com/sturdyChair/asset/blob/main/HiFi/SSD_Decal.jpg" width="600" height="400"/>
   >
-  > <img src="https://github.com/sturdyChair/asset/blob/main/HiFi/SSD.gif" width="600" height="400"/>
+  > <img src="https://github.com/sturdyChair/asset/blob/main/HiFi/SSD.gif" width="600" height="400"/>   
   > SSD를 이용한 스포트라이트 연출, 레벨의 모든 라이트를 제어하는 대신 SSD를 이용해 '빛'이 비추는 공간만 특수하게 처리함
 ### 파티클    
 - **Point Instancing**:    
