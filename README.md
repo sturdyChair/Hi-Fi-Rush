@@ -1,7 +1,7 @@
 # DirectX11 모작 팀 포트폴리오 : Hi-Fi-Rush
 
-![img](https://i.namu.wiki/i/h6jufCk4RgPaI7q8dlbPcKHnLkhfkZsDAXDmGGjijy8HqceSFgYTipgHuVv0_T1SO8FvG7LoovXEGo_2lHcsazfcx3f_JNizrp-LqEBU4frDY8_4QlsD3DSFS-czm2xtxm8-SDjNFz9xpEFcbHZZyw.webp)
-
+<img src="https://github.com/sturdyChair/asset/blob/main/HiFi/SSD.gif" width="600" height="400"/>
+  
 리소스가 포함되어있지 않은 코드 공개용 리포지토리입니다. 정상적으로 동작하지 않을 가능성이 매우 높습니다.
 
 개발 기간 : 2024.09 ~ 2024.11
@@ -40,6 +40,7 @@ C, C++, STL, FMOD, Win API, OpenCV, DLL, DirectX 11, vcpkg, HLSL, Effects11, Ass
 
 ## 1. DirectX 11 기반 렌더링 엔진
 ### 렌더링
+  <img src="https://github.com/sturdyChair/asset/blob/main/HiFi/RenderTarget.jpg" width="600" height="400"/>   
 - **디퍼드 라이팅**: 연산 부하를 줄이기 위해 G-Buffer 활용
   - G-Buffer 데이터: `Color`, `Id`, `Position`, `Normal`, `Emissive`.
     > `Id`버퍼는 픽셀 피킹 등 개발 편의성을 위해 마련됨
@@ -111,9 +112,11 @@ C, C++, STL, FMOD, Win API, OpenCV, DLL, DirectX 11, vcpkg, HLSL, Effects11, Ass
   - `Union Effect`로 여러 이펙트를 통합 및 관리
     >
     > ![img](https://github.com/sturdyChair/asset/blob/main/EffectBase1.png)
-    >
+    >  
     > 이펙트 인터페이스, 수명 관리를 위한 Enum과 콜백 함수가 정의되어있음
     >
+    > <img src="https://github.com/sturdyChair/asset/blob/main/HiFi/UnionEffect.jpg" width="600" height="400"/>
+    > 
 - **툴 지원**:
   - ImGui 및 Imguizmo 라이브러리를 사용한 편집 기능 제공
   - UV좌표, 컬러, 재생률, 수명, 크기 등 다양한 정보를 수정 및 확인 가능
